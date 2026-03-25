@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-navy-light: #002C5A;
+  --color-navy: #002147;
+  --color-navy-dark: #001833;
+
+  --color-gold-light: #D4B87E;
+  --color-gold: #C5A059;
+  --color-gold-dark: #B08B45;
+
+  --color-accent: #F9FAFB;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-navy bg-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gold text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gold-dark hover:shadow-lg disabled:opacity-50 cursor-pointer;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-gold text-gold px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-gold hover:text-white disabled:opacity-50 cursor-pointer;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  .nav-link {
+    @apply text-navy/80 hover:text-gold font-medium transition-colors duration-200;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-navy to-gold;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+}
