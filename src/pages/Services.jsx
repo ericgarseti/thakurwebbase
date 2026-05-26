@@ -88,12 +88,12 @@ const Services = () => {
                   </p>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                    {[
+                    {(service.features || [
                       "Strategic Advisory",
                       "Risk Mitigation",
                       "Operational Support",
                       "Capital Optimization"
-                    ].map((item, i) => (
+                    ]).map((item, i) => (
                       <div key={i} className="flex items-center space-x-3 text-sm font-medium text-navy">
                         <CheckCircle className="text-gold shrink-0" size={18} />
                         <span>{item}</span>

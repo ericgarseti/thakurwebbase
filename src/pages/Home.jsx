@@ -173,6 +173,72 @@ const Home = () => {
         </div>
       </section>
 
+      {/* FDI & ECB Funding Showcase */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-navy/5 rounded-full blur-3xl -z-10" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h4 className="text-gold font-semibold tracking-wider uppercase mb-4 text-sm">Specialized Funding Solutions</h4>
+              <h3 className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight">
+                FDI & ECB <span className="text-gold italic">Soft Loans</span>
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                We specialize in sourcing and structuring Foreign Direct Investment (FDI) and External Commercial Borrowings (ECB) at highly competitive soft interest rates.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-8">
+                Our global network and deep regulatory expertise enable us to facilitate large-scale international debt and equity funding for Indian corporates, ensuring seamless cross-border compliance and optimal structuring.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                {[
+                  "Low-Interest Soft Loans",
+                  "Global Capital Access",
+                  "Regulatory & FEMA Compliance",
+                  "Optimized Debt Structuring",
+                  "Cross-Border Transactions",
+                  "Institutional Partnerships"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center space-x-3 text-navy font-medium">
+                    <CheckCircle2 className="text-gold shrink-0" size={18} />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Link to="/contact" className="btn-primary inline-flex items-center">
+                Explore Funding Options <ArrowRight className="ml-2" size={18} />
+              </Link>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                  alt="Financial Strategy and Chart Analysis" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -top-6 -right-6 bg-navy text-white p-6 rounded-2xl shadow-xl hidden sm:block border-r-4 border-gold">
+                <p className="text-2xl font-bold text-gold">$500M+</p>
+                <p className="text-xs text-white/70 uppercase tracking-widest font-semibold">Capital Arranged</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Founder Section */}
       <section className="section-container">
         <div className="bg-navy rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl">
@@ -190,7 +256,7 @@ const Home = () => {
               "At Thakur Capital, we don't just facilitate transactions; we cultivate partnerships that drive sustainable economic value across borders."
             </p>
             <div>
-              <p className="text-white font-bold text-xl mb-1">Thakur [Name Placeholder]</p>
+              <p className="text-white font-bold text-xl mb-1">Mr. Thakur</p>
               <p className="text-gold font-medium">Founder & Managing Principal</p>
             </div>
             <div className="mt-8 flex gap-4">
@@ -220,6 +286,38 @@ const Home = () => {
           <Link to="/industries" className="btn-outline inline-flex items-center">
             Explore All Sectors <ArrowRight className="ml-2" size={18} />
           </Link>
+        </div>
+      </section>
+
+      {/* Chairman's Message Section */}
+      <section className="py-24 bg-accent/40 relative overflow-hidden border-t border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h4 className="text-gold font-semibold tracking-wider uppercase mb-3 text-xs">Vision & Leadership</h4>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy uppercase tracking-tight">Chairman's Message</h2>
+          </div>
+          <div className="bg-white rounded-3xl p-8 md:p-16 shadow-xl border border-gray-100/50 flex flex-col md:flex-row items-center gap-12 relative">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-bl-[100px]" />
+            
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-md shrink-0 border-2 border-gold/20">
+              <img 
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+                alt="Chairman" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="flex-1">
+              <span className="text-gold font-serif text-6xl leading-none block -mt-4 mb-2">“</span>
+              <p className="text-navy font-serif italic text-lg md:text-xl leading-relaxed mb-6">
+                At Thakur Capital Advisors, we believe that strategic financial planning combined with robust execution holds the key to global scaling. Our focus is to deliver exceptional cross-border advisory, helping organizations navigate complex capital structures, secure foreign funding, and optimize their capital allocation strategies. We stand committed as long-term partners in your enterprise growth journey.
+              </p>
+              <div>
+                <p className="text-navy font-bold text-xl">Mr. Thakur</p>
+                <p className="text-gold font-medium text-sm">Chairman & Managing Director</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
